@@ -20,7 +20,6 @@ def format(sudoku):
         if x < 2:
             string += " "
         x += 1
-
     return string + "|\n" + BAR
 
 def place(str):
@@ -28,6 +27,4 @@ def place(str):
         return " "
     else:
         return str
-
-
     return string
