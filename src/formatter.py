@@ -32,3 +32,7 @@ def place(str):
 
 def convert_to_2dtable(sudoku):
     return [list(sudoku[0:9]), list(sudoku[9:18]), list(sudoku[18:27]), list(sudoku[27:36]), list(sudoku[36:45]), list(sudoku[45:54]), list(sudoku[54:63]), list(sudoku[63:72]), list(sudoku[72:81])]
+
+
+def convert_string(list):
+    return "".join("".join(list[0]) + "".join(list[1]) + "".join(list[2]) + "".join(list[3]) + "".join(list[4]) + "".join(list[5]) + "".join(list[6]) + "".join(list[7]) + "".join(list[8]))
