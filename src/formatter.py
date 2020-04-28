@@ -28,3 +28,7 @@ def place(str):
     else:
         return str
     return string
+
+
+def convert_to_2dtable(sudoku):
+    return [list(sudoku[0:9]), list(sudoku[9:18]), list(sudoku[18:27]), list(sudoku[27:36]), list(sudoku[36:45]), list(sudoku[45:54]), list(sudoku[54:63]), list(sudoku[63:72]), list(sudoku[72:81])]
