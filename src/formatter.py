@@ -1,6 +1,7 @@
 BAR = " ----------------- \n"
 LINE = "|-----+-----+-----|\n"
 
+
 def format(sudoku):
     x = 0
     string = "\n" + str(BAR)
@@ -22,17 +23,20 @@ def format(sudoku):
         x += 1
     return string + "|\n" + BAR
 
+
 def place(str):
     if str == ".":
         return " "
-    else:
-        return str
-    return string
+    return str
 
 
-def convert_to_2dtable(sudoku):
-    return [list(sudoku[0:9]), list(sudoku[9:18]), list(sudoku[18:27]), list(sudoku[27:36]), list(sudoku[36:45]), list(sudoku[45:54]), list(sudoku[54:63]), list(sudoku[63:72]), list(sudoku[72:81])]
+def convert_to_lines(sudoku):
+    return [sudoku[0:9], sudoku[9:18], sudoku[18:27], sudoku[27:36], sudoku[36:45], sudoku[45:54], sudoku[54:63], sudoku[63:72], sudoku[72:81]]
 
 
-def convert_string(list):
-    return "".join("".join(list[0]) + "".join(list[1]) + "".join(list[2]) + "".join(list[3]) + "".join(list[4]) + "".join(list[5]) + "".join(list[6]) + "".join(list[7]) + "".join(list[8]))
+def convert_to_string(list):
+    return "".join(list)
+
+
+def convert_to_colums(sudoku):
+    return [sudoku[0:81:9], sudoku[1:81:9], sudoku[2:81:9], sudoku[3:81:9], sudoku[4:81:9], sudoku[5:81:9], sudoku[6:81:9], sudoku[7:81:9], sudoku[8:81:9]]
