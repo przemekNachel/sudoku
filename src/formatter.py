@@ -31,7 +31,7 @@ def place(str):
 
 
 def convert_to_lines(sudoku):
-    return [sudoku[0:9], sudoku[9:18], sudoku[18:27], sudoku[27:36], sudoku[36:45], sudoku[45:54], sudoku[54:63], sudoku[63:72], sudoku[72:81]]
+    return [sudoku[i:i+9] for i in range(0, len(sudoku), 9)]
 
 
 def convert_to_string(list):
@@ -40,3 +40,7 @@ def convert_to_string(list):
 
 def convert_to_colums(sudoku):
     return [sudoku[0:81:9], sudoku[1:81:9], sudoku[2:81:9], sudoku[3:81:9], sudoku[4:81:9], sudoku[5:81:9], sudoku[6:81:9], sudoku[7:81:9], sudoku[8:81:9]]
+
+
+# def convert_to_squares(sudoku):
+#     return [sudoku[0:27:9] + sudoku[9:], sudoku[1:81:9], sudoku[2:81:9], sudoku[3:81:9], sudoku[4:81:9], sudoku[5:81:9], sudoku[6:81:9], sudoku[7:81:9], sudoku[8:81:9]]

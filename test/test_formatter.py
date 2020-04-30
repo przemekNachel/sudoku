@@ -40,6 +40,12 @@ class TestFormatter(unittest.TestCase):
         expected = "...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........"
         self.assertEqual(expected, src.formatter.convert_to_string(list))
 
+    # def test_convert_to_squares(self):
+    #     list = ["...9.....", "..857...3", "......281", "9......6.", "....1.7.8", "..3....95", "..1.53.79",
+    #             "8.....51.", "6........"]
+    #     expected = "...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........"
+    #     self.assertEqual(expected, src.formatter.convert_to_squares(list))
+
 
 if __name__ == '__main__':
     unittest.main()
