@@ -39,7 +39,7 @@ def convert_to_string(list):
 
 
 def convert_to_colums(sudoku):
-    return [sudoku[0:81:9], sudoku[1:81:9], sudoku[2:81:9], sudoku[3:81:9], sudoku[4:81:9], sudoku[5:81:9], sudoku[6:81:9], sudoku[7:81:9], sudoku[8:81:9]]
+    return [sudoku[i:len(sudoku):9] for i in range(0, 9)]
 
 
 # def convert_to_squares(sudoku):
