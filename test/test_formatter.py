@@ -1,6 +1,7 @@
 import src.formatter
 import unittest
 
+
 class TestFormatter(unittest.TestCase):
 
     def test_format(self):
@@ -45,7 +46,6 @@ class TestFormatter(unittest.TestCase):
                 "8.....51.", "6........"]
         expected = "...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........"
         self.assertEqual(expected, src.formatter.convert_to_string(list))
-
 
 
 if __name__ == '__main__':
