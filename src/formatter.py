@@ -42,5 +42,12 @@ def convert_to_colums(sudoku):
     return [sudoku[i:len(sudoku):9] for i in range(0, 9)]
 
 
-# def convert_to_squares(sudoku):
-#     return [sudoku[0:27:9] + sudoku[9:], sudoku[1:81:9], sudoku[2:81:9], sudoku[3:81:9], sudoku[4:81:9], sudoku[5:81:9], sudoku[6:81:9], sudoku[7:81:9], sudoku[8:81:9]]
+def convert_to_squares(sudoku):
+    squares = []
+    for i in range(0, len(sudoku), 27):
+        for j in range(i, i+9, 3):
+            lines = []
+            for k in range(j, j+19, 9):
+                lines.append(sudoku[k:k+3])
+            squares.append("".join(lines))
+    return squares
