@@ -16,8 +16,9 @@ class Board:
     def get(self, square, field):
         return src.tools.formatter.convert_to_squares(self.fields)[square-1][field-1]
 
-    def get_line(self, line):
-        return src.tools.formatter.convert_to_lines(self.fields)[line-1]
+    def get_line(self, field):
+        line = int(field.id / 9)
+        return src.tools.formatter.convert_to_lines(self.fields)[line]
 
     def to_ascii(self):
         return src.tools.formatter.format(str(self))
