@@ -1,4 +1,4 @@
-import src.Field
+import src.model.Field
 
 
 class Board:
@@ -9,7 +9,7 @@ class Board:
     def init_board(self, sudoku):
         fields = []
         for i in range(0, 81):
-            fields.append(src.Field.Field(i, sudoku[i]))
+            fields.append(src.model.Field.Field(i, sudoku[i]))
         return tuple(fields)
 
     def __str__(self):

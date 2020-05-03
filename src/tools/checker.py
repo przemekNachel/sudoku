@@ -1,4 +1,4 @@
-import src.formatter
+import src.tools.formatter
 
 
 def check_sets_are_unique(sets):
@@ -10,15 +10,15 @@ def check_sets_are_unique(sets):
 
 
 def horizontal_lines_correct(sudoku):
-    return check_sets_are_unique(src.formatter.convert_to_lines(sudoku))
+    return check_sets_are_unique(src.tools.formatter.convert_to_lines(sudoku))
 
 
 def vertical_lines_correct(sudoku):
-    return check_sets_are_unique(src.formatter.convert_to_colums(sudoku))
+    return check_sets_are_unique(src.tools.formatter.convert_to_colums(sudoku))
 
 
 def squares_correct(sudoku):
-    return check_sets_are_unique(src.formatter.convert_to_squares(sudoku))
+    return check_sets_are_unique(src.tools.formatter.convert_to_squares(sudoku))
 
 
 def is_correct(sudoku):
