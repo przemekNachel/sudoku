@@ -14,7 +14,7 @@ def horizontal_lines_correct(sudoku):
 
 
 def vertical_lines_correct(sudoku):
-    return check_sets_are_unique(src.tools.formatter.convert_to_colums(sudoku))
+    return check_sets_are_unique(src.tools.formatter.convert_to_columns(sudoku))
 
 
 def squares_correct(sudoku):
