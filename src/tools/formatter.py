@@ -38,7 +38,7 @@ def convert_to_string(list):
     return "".join(list)
 
 
-def convert_to_colums(sudoku):
+def convert_to_columns(sudoku):
     return [sudoku[i:len(sudoku):9] for i in range(0, 9)]
 
 
@@ -49,5 +49,5 @@ def convert_to_squares(sudoku):
             lines = []
             for k in range(j, j+19, 9):
                 lines.append(sudoku[k:k+3])
-            squares.append("".join(lines))
+            squares.append(lines[0] + lines[1] + lines[2])
     return squares

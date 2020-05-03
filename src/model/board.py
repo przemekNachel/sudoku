@@ -1,5 +1,5 @@
-import src.model.Field
-
+import src.model.field
+import src.tools.formatter
 
 class Board:
 
@@ -9,8 +9,15 @@ class Board:
     def init_board(self, sudoku):
         fields = []
         for i in range(0, 81):
-            fields.append(src.model.Field.Field(i, sudoku[i]))
+            fields.append(src.model.field.Field(i, sudoku[i]))
         return tuple(fields)
+
+    def get(self, square, field):
+        return src.tools.formatter.convert_to_squares(self.fields)[square-1][field-1]
+
+    def to_ascii(self):
+        return src.tools.formatter.format(str(self))
 
     def __str__(self):
         return "".join([str(f) for f in self.fields])
+
