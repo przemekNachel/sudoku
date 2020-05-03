@@ -48,6 +48,19 @@ class TestBoard(unittest.TestCase):
         expected = "371489256"
         self.assertEqual(expected, "".join([b.value for b in board.get_column(field)]))
 
+    def test_get_square_1(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        print(board.to_ascii())
+        field = board.get(4, 1)
+        expected = "142785693"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
+    def test_get_square_2(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        field = board.get(6, 3)
+        expected = "965134728"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
     # def test_update_possible_values(self):
     #     board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
     #     expected = ["1", "2", "3", "4", "5", "7"]

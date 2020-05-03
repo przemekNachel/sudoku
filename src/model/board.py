@@ -21,12 +21,18 @@ class Board:
         return src.tools.formatter.convert_to_lines(self.fields)[line]
 
     def get_column(self, field):
-        column = int(field.id % 9)
+        column = field.id % 9
         return src.tools.formatter.convert_to_columns(self.fields)[column]
+
+    def get_square(self, field):
+        print(str(field.id) + " " + str(field.id % 9))
+        square = int(field.id / 9)
+        return src.tools.formatter.convert_to_squares(self.fields)[square]
 
     def to_ascii(self):
         return src.tools.formatter.format(str(self))
 
     def __str__(self):
         return "".join([str(f) for f in self.fields])
+
 
