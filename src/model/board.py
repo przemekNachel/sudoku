@@ -28,7 +28,7 @@ class Board:
         x = (id % 9) + 1
         y = int(id / 9) + 1
 
-        square = y + x * 2 + 1
+        square = (x % 3 + y) - 1
 
 
         sudoku = "." * 81
@@ -37,7 +37,7 @@ class Board:
         return square
 
     def get_square(self, field):
-        return src.tools.formatter.convert_to_squares(self.fields)[self.get_square_by_field_id(field.id)]
+        return src.tools.formatter.convert_to_squares(self.fields)[self.get_square_by_field_id(field.id) - 1]
 
     def to_ascii(self):
         return src.tools.formatter.format(str(self))
