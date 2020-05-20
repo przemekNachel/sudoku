@@ -28,7 +28,7 @@ class Board:
         x = (id % 9) + 1
         y = int(id / 9) + 1
 
-        square = (x % 3 + y) - 1
+        square = (x % 3 + y) - 1  # TODO
 
 
         sudoku = "." * 81
