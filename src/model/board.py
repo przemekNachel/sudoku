@@ -24,10 +24,20 @@ class Board:
         column = field.id % 9
         return src.tools.formatter.convert_to_columns(self.fields)[column]
 
+    def get_square_by_field_id(self, id):
+        x = id % 9
+        y = int(id / 9)
+
+        square = y + x * 2 + 1
+
+
+        sudoku = "." * 81
+        print(src.tools.formatter.format(sudoku[:id] + "x" + sudoku[id + 1:]))
+        print("id = {}\nx = {}\ny = {}\nsquare = {}\n".format(id, x, y, square))
+        return square
+
     def get_square(self, field):
-        print(str(field.id) + " " + str(field.id % 9))
-        square = int(field.id / 9)
-        return src.tools.formatter.convert_to_squares(self.fields)[square]
+        return src.tools.formatter.convert_to_squares(self.fields)[self.get_square_by_field_id(field.id)]
 
     def to_ascii(self):
         return src.tools.formatter.format(str(self))
