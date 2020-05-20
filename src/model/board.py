@@ -25,8 +25,8 @@ class Board:
         return src.tools.formatter.convert_to_columns(self.fields)[column]
 
     def get_square_by_field_id(self, id):
-        x = id % 9
-        y = int(id / 9)
+        x = (id % 9) + 1
+        y = int(id / 9) + 1
 
         square = y + x * 2 + 1
 
