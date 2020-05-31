@@ -1,4 +1,5 @@
 import src.model.board
+from src.tools.random_array_generator import Generator
 import unittest
 
 
@@ -88,6 +89,13 @@ class TestBoard(unittest.TestCase):
         board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
         square = 7
         field = board.get(square, 5)
+        self.assertEqual(square, board.get_square_by_field_id(field.id))
+
+    def test_get_square_by_field_id_4(self):
+        board = src.model.board.Board(str(Generator(81, 10)))
+        square = 7
+        field = board.get(square, 5)
+
         self.assertEqual(square, board.get_square_by_field_id(field.id))
 
     # def test_update_possible_values(self):
