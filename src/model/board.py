@@ -1,5 +1,6 @@
 import src.model.field
 import src.tools.formatter
+import math
 
 
 class Board:
@@ -27,7 +28,9 @@ class Board:
     def get_square_by_field_id(self, id):
         x = (id % 9) + 1
         y = int(id / 9) + 1
-        square = (id / 3 + y) / 3  # TODO
+        x = math.floor(x / 3 - 0.01) + 1
+        y = math.floor(y / 3 - 0.01) + 1
+        square = (3 * y) - 3 + x
         print(src.tools.formatter.format(src.tools.formatter.get_point_in_sudoku(id)))
         print("id = {}\nx = {}\ny = {}\nsquare = {}\n".format(id, x, y, square))
         return square
