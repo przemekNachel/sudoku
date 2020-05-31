@@ -27,9 +27,7 @@ class Board:
     def get_square_by_field_id(self, id):
         x = (id % 9) + 1
         y = int(id / 9) + 1
-
-        square = (x % 3 + y) - 1  # TODO
-
+        square = (id / 3 + y) / 3 # TODO
 
         sudoku = "." * 81
         print(src.tools.formatter.format(sudoku[:id] + "x" + sudoku[id + 1:]))
