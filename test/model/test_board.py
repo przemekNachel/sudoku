@@ -1,4 +1,5 @@
 import src.model.board
+from src.tools.random_array_generator import Generator
 import unittest
 
 
@@ -52,6 +53,39 @@ class TestBoard(unittest.TestCase):
         board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
         expected = ["1", "2", "3", "4", "5", "7"]
         self.assertEqual(expected, board.get(1, 1).possible_values)
+
+    def test_get_square_1(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        field = board.get(4, 1)
+        expected = "142785693"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
+    def test_get_square_2(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        field = board.get(6, 3)
+        expected = "965134728"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
+    def test_get_square_3(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        field = board.get(7, 7)
+        expected = "328451967"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
+    def test_get_square_4(self):
+        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
+        field = board.get(1, 8)
+        expected = "839274516"
+        self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
+
+
+    def test_get_square_by_field_id(self):
+        for i in range(100):
+            board = src.model.board.Board(str(Generator(81, 1, 10)))
+            square = Generator(1, 1, 10).get()[0]
+            field = board.get(square, Generator(1, 1, 10).get()[0])
+            self.assertEqual(square, board.get_square_by_field_id(field.id))
+
 
 if __name__ == '__main__':
     unittest.main()
