@@ -10,4 +10,10 @@ class Generator:
     def get(self):
         return [random.randrange(self.starts_from, self.less_than) for i in range(self.amount)]
 
+    def __str__(self):
+        string = ""
+        for i in self.get():
+            string += str(i)
+        return string
+
 

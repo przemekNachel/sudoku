@@ -73,9 +73,10 @@ class TestBoard(unittest.TestCase):
         expected = "839274516"
         self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
 
+
     def test_get_square_by_field_id(self):
         for i in range(100):
-            board = src.model.board.Board(str(Generator(81, 1, 10).get()))
+            board = src.model.board.Board(str(Generator(81, 1, 10)))
             square = Generator(1, 1, 10).get()[0]
             field = board.get(square, Generator(1, 1, 10).get()[0])
             self.assertEqual(square, board.get_square_by_field_id(field.id))
