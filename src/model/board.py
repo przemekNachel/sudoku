@@ -6,7 +6,6 @@ import math
 class Board:
 
     def __init__(self, sudoku="................................................................................."):
-        print(sudoku)
         self.fields = self.init_board(sudoku)
 
     def init_board(self, sudoku):
