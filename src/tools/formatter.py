@@ -17,17 +17,16 @@ def format(sudoku):
                 string += LINE
         if i % 9 == 0:
             string += "|"
-        string += place(sudoku[i])
+        string += sudoku[i]
         if x < 2:
             string += " "
         x += 1
-    return string + "|\n" + BAR
+    return string.replace(".", " ") + "|\n" + BAR
 
 
-def place(str):
-    if str == ".":
-        return " "
-    return str
+def get_point_in_sudoku(id):
+    sudoku = "." * 81
+    return sudoku[:id] + "x" + sudoku[id + 1:]
 
 
 def convert_to_lines(sudoku):
@@ -38,7 +37,7 @@ def convert_to_string(list):
     return "".join(list)
 
 
-def convert_to_colums(sudoku):
+def convert_to_columns(sudoku):
     return [sudoku[i:len(sudoku):9] for i in range(0, 9)]
 
 
@@ -49,5 +48,5 @@ def convert_to_squares(sudoku):
             lines = []
             for k in range(j, j+19, 9):
                 lines.append(sudoku[k:k+3])
-            squares.append("".join(lines))
+            squares.append(lines[0] + lines[1] + lines[2])
     return squares

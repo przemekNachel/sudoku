@@ -26,6 +26,5 @@ class TestChecker(unittest.TestCase):
             self.assertTrue(src.tools.checker.is_correct(sudoku))
 
 
-
 if __name__ == '__main__':
     unittest.main()
