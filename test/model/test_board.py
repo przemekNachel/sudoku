@@ -73,30 +73,12 @@ class TestBoard(unittest.TestCase):
         expected = "839274516"
         self.assertEqual(expected, "".join([b.value for b in board.get_square(field)]))
 
-    def test_get_square_by_field_id_1(self):
-        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
-        square = 1
-        field = board.get(square, 1)
-        self.assertEqual(square, board.get_square_by_field_id(field.id))
-
-    def test_get_square_by_field_id_2(self):
-        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
-        square = 4
-        field = board.get(square, 2)
-        self.assertEqual(square, board.get_square_by_field_id(field.id))
-
-    def test_get_square_by_field_id_3(self):
-        board = src.model.board.Board("839162547274985316516437892142378965785629134693541728328714659451896273967253481")
-        square = 7
-        field = board.get(square, 5)
-        self.assertEqual(square, board.get_square_by_field_id(field.id))
-
-    def test_get_square_by_field_id_4(self):
-        board = src.model.board.Board(str(Generator(81, 1, 10).get()))
-        square = 2
-        field = board.get(square, 5)
-
-        self.assertEqual(square, board.get_square_by_field_id(field.id))
+    def test_get_square_by_field_id(self):
+        for i in range(100):
+            board = src.model.board.Board(str(Generator(81, 1, 10).get()))
+            square = Generator(1, 1, 10).get()[0]
+            field = board.get(square, Generator(1, 1, 10).get()[0])
+            self.assertEqual(square, board.get_square_by_field_id(field.id))
 
     # def test_update_possible_values(self):
     #     board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
