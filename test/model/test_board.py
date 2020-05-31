@@ -92,8 +92,8 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(square, board.get_square_by_field_id(field.id))
 
     def test_get_square_by_field_id_4(self):
-        board = src.model.board.Board(str(Generator(81, 10)))
-        square = 7
+        board = src.model.board.Board(str(Generator(81, 1, 10).get()))
+        square = 2
         field = board.get(square, 5)
 
         self.assertEqual(square, board.get_square_by_field_id(field.id))
