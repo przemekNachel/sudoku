@@ -15,11 +15,22 @@ class Board:
         return tuple(fields)
 
     def get(self, square, field):
-        return src.tools.formatter.convert_to_squares(self.fields)[square-1][field-1]
+        field = src.tools.formatter.convert_to_squares(self.fields)[square-1][field-1]
+        self.update_possible_values(field)
+        return field
 
     def get_line(self, field):
         line = int(field.id / 9)
         return src.tools.formatter.convert_to_lines(self.fields)[line]
+
+    def update_possible_values(self, field):
+        line = [i.value for i in self.get_line(field)]
+        column = [i.value for i in self.get_column(field)]
+        square = [i.value for i in self.get_square(field)]
+        not_possible = set(list(line+column+square))
+        if "." in not_possible:
+            not_possible.remove(".")
+        field.possible_values = set(field.possible_values) - not_possible
 
     def get_column(self, field):
         column = field.id % 9
