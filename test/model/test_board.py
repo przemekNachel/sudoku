@@ -48,10 +48,10 @@ class TestBoard(unittest.TestCase):
         expected = "371489256"
         self.assertEqual(expected, "".join([b.value for b in board.get_column(field)]))
 
-    # def test_update_possible_values(self):
-    #     board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
-    #     expected = ["1", "2", "3", "4", "5", "7"]
-    #     self.assertEqual(expected, board.get(1, 1).possible_values)
+    def test_update_possible_values(self):
+        board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
+        expected = ["1", "2", "3", "4", "5", "7"]
+        self.assertEqual(expected, board.get(1, 1).possible_values)
 
 if __name__ == '__main__':
     unittest.main()
