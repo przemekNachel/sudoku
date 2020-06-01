@@ -42,8 +42,6 @@ class Board:
         x = math.floor(x / 3 - 0.01) + 1
         y = math.floor(y / 3 - 0.01) + 1
         square = (3 * y) - 3 + x
-        print(src.tools.formatter.format(src.tools.formatter.get_point_in_sudoku(id)))
-        print("id = {}\nx = {}\ny = {}\nsquare = {}\n".format(id, x, y, square))
         return square
 
     def get_square(self, field):
