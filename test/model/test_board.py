@@ -94,8 +94,6 @@ class TestBoard(unittest.TestCase):
             board = src.model.board.Board(str(Generator(81, 1, 10)))
             square = Generator(1, 1, 10).get()[0]
             field = board.get(square, Generator(1, 1, 10).get()[0])
-            print(src.tools.formatter.format(src.tools.formatter.get_point_in_sudoku(field.id)))
-            print("id = {}\nsquare = {}\n".format(field.id, square))
             self.assertEqual(square, board.get_square_by_field_id(field.id))
 
 
