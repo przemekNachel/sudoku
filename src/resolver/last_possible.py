@@ -20,6 +20,9 @@ class LastPossible:
     def commit(self):
         if self.to_commit:
             for field in self.fields_with_last_possible_value:
+                print(field.id)
+                print(field.possible_values)
                 field.value = field.possible_values.pop()
                 self.committed += 1
                 self.to_commit -= 1
+            self.fields_with_last_possible_value = []

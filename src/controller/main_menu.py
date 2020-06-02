@@ -16,7 +16,7 @@ class MainMenu:
 
     def start(self):
         while self.view.choice != "exit":
-            self.view.get_choice(self.sudoku, self.message)
+            self.view.get_choice(str(self.board), self.message)
             self.message = ""
             self.do(self.view.choice)
             print(self.view.choice)
