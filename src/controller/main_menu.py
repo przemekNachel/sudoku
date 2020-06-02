@@ -1,5 +1,6 @@
 import src.view.main_menu
 
+
 class MainMenu:
 
     def __init__(self, sudoku=None):
@@ -12,6 +13,7 @@ class MainMenu:
         while self.view.choice != "exit":
             self.view.get_choice(self.sudoku)
             self.do(self.view.choice)
+            print(self.view.choice)
 
     def do(self, action):
         if action == "scan":
