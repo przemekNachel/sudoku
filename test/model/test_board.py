@@ -1,5 +1,6 @@
 import src.model.board
 from src.tools.random_array_generator import Generator
+import src.tools.formatter
 import unittest
 
 
@@ -51,17 +52,17 @@ class TestBoard(unittest.TestCase):
 
     def test_update_possible_values_1(self):
         board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
-        expected = set(["1", "2", "3", "4", "5", "7"])
+        expected = {"1", "2", "3", "4", "5", "7"}
         self.assertEqual(expected, board.get(1, 1).possible_values)
 
     def test_update_possible_values_2(self):
         board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
-        expected = set(["2", "4", "6", "8"])
+        expected = {"2", "4", "6", "8"}
         self.assertEqual(expected, board.get(5, 8).possible_values)
 
     def test_update_possible_values_3(self):
         board = src.model.board.Board("...9.......857...3......2819......6.....1.7.8..3....95..1.53.798.....51.6........")
-        expected = set(["2", "3", "4"])
+        expected = {"2", "3", "4"}
         self.assertEqual(expected, board.get(6, 5).possible_values)
 
     def test_get_square_1(self):
