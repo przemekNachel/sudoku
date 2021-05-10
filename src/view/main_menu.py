@@ -3,7 +3,7 @@ import src.tools.formatter
 
 class MainMenu:
 
-    menu = "Sudoku Resolver\n{message}\n{sudoku}\n1. Scan\n2. Commit\n\n0. Exit"
+    menu = ("\n" * 25) + "Sudoku Resolver\n{message}\n{sudoku}\n1. Scan\n2. Commit\n\n0. Exit\n"
 
     def __init__(self):
         self.choice = None
